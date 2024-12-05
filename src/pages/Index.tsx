@@ -31,8 +31,8 @@ const Index = () => {
       description: "Árvore caída bloqueando a via",
       resolved: true,
       address: "Av. Padre Cícero, 456",
-      createdAt: "2024-02-15T15:30:00Z", // Mês passado
-      resolvedAt: "2024-02-17T09:00:00Z",
+      createdAt: "2024-12-15T15:30:00Z", // Dezembro 2024
+      resolvedAt: "2024-12-17T09:00:00Z",
       photos: [
         "/lovable-uploads/2589f548-80a1-4fef-b312-c816b09315d8.png"
       ]
@@ -56,7 +56,7 @@ const Index = () => {
       description: "Buraco na via pública",
       resolved: false,
       address: "Rua das Flores, 321",
-      createdAt: "2024-01-20T14:20:00Z", // Janeiro
+      createdAt: "2024-11-20T14:20:00Z", // Novembro 2024
       photos: [
         "/lovable-uploads/bc27f7c6-7c7e-4aaf-90f1-43cd19adf92a.png"
       ]
@@ -68,8 +68,8 @@ const Index = () => {
       description: "Poste com iluminação defeituosa",
       resolved: true,
       address: "Av. Leão Sampaio, 987",
-      createdAt: "2024-02-28T16:15:00Z", // Final de fevereiro
-      resolvedAt: "2024-03-02T10:30:00Z",
+      createdAt: "2024-11-28T16:15:00Z", // Novembro 2024
+      resolvedAt: "2024-11-30T10:30:00Z",
       photos: [
         "/lovable-uploads/3f8f8250-5410-4296-968b-8aaf6af286c4.png"
       ]
@@ -81,8 +81,8 @@ const Index = () => {
       description: "Calçada danificada",
       resolved: true,
       address: "Rua São José, 654",
-      createdAt: "2024-03-01T09:40:00Z", // Início de março
-      resolvedAt: "2024-03-05T15:20:00Z",
+      createdAt: "2024-12-01T09:40:00Z", // Dezembro 2024
+      resolvedAt: "2024-12-05T15:20:00Z",
       photos: [
         "/lovable-uploads/2589f548-80a1-4fef-b312-c816b09315d8.png"
       ]
