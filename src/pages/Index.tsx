@@ -4,26 +4,26 @@ import Map from "@/components/Map";
 import Contact from "@/components/Contact";
 
 const Index = () => {
-  // Dados mockados para demonstração
+  // Dados mockados para demonstração em Juazeiro do Norte
   const mockReports = [
     {
       id: 1,
-      latitude: -23.5505,
-      longitude: -46.6333,
+      latitude: -7.2131,
+      longitude: -39.3150,
       description: "Buraco na calçada",
       resolved: false,
     },
     {
       id: 2,
-      latitude: -23.5605,
-      longitude: -46.6433,
+      latitude: -7.2231,
+      longitude: -39.3250,
       description: "Iluminação pública defeituosa",
       resolved: true,
     },
     {
       id: 3,
-      latitude: -23.5705,
-      longitude: -46.6233,
+      latitude: -7.2031,
+      longitude: -39.3050,
       description: "Lixo acumulado",
       resolved: false,
     },

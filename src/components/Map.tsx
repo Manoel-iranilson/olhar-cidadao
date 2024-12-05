@@ -74,7 +74,7 @@ const MapComponent = ({ reports }: MapProps) => {
         vectorLayer
       ],
       view: new View({
-        center: fromLonLat([-46.6333, -23.5505]), // São Paulo
+        center: fromLonLat([-39.3150, -7.2131]), // Juazeiro do Norte, CE
         zoom: 13
       })
     });
