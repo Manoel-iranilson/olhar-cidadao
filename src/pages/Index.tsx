@@ -12,6 +12,9 @@ const Index = () => {
       longitude: -39.3150,
       description: "Buraco na calçada",
       resolved: false,
+      address: "Rua São Pedro, 123",
+      createdAt: "2024-03-15T10:00:00Z",
+      photos: []
     },
     {
       id: 2,
@@ -19,6 +22,10 @@ const Index = () => {
       longitude: -39.3250,
       description: "Iluminação pública defeituosa",
       resolved: true,
+      address: "Av. Padre Cícero, 456",
+      createdAt: "2024-03-10T15:30:00Z",
+      resolvedAt: "2024-03-12T09:00:00Z",
+      photos: []
     },
     {
       id: 3,
@@ -26,6 +33,9 @@ const Index = () => {
       longitude: -39.3050,
       description: "Lixo acumulado",
       resolved: false,
+      address: "Rua do Cruzeiro, 789",
+      createdAt: "2024-03-14T08:45:00Z",
+      photos: []
     },
   ];
 
