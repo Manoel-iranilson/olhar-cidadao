@@ -9,6 +9,7 @@ import VectorSource from 'ol/source/Vector';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { Style, Icon } from 'ol/style';
+import { useToast } from "@/components/ui/use-toast";
 import 'ol/ol.css';
 
 interface Report {
@@ -26,6 +27,7 @@ interface MapProps {
 const MapComponent = ({ reports }: MapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Map | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -79,6 +81,22 @@ const MapComponent = ({ reports }: MapProps) => {
       })
     });
 
+    // Adicionar evento de clique
+    map.on('click', (event) => {
+      const feature = map.forEachFeatureAtPixel(event.pixel, (feature) => feature);
+      
+      if (feature) {
+        const properties = feature.get('properties');
+        if (properties) {
+          const status = properties.resolved ? 'Resolvida' : 'Pendente';
+          toast({
+            title: `Denúncia: ${status}`,
+            description: properties.description,
+          });
+        }
+      }
+    });
+
     mapInstanceRef.current = map;
 
     return () => {
@@ -87,7 +105,7 @@ const MapComponent = ({ reports }: MapProps) => {
         mapInstanceRef.current = null;
       }
     };
-  }, [reports]);
+  }, [reports, toast]);
 
   return (
     <div 
