@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -9,7 +9,10 @@ import VectorSource from 'ol/source/Vector';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { Style, Icon } from 'ol/style';
-import { useToast } from "@/components/ui/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { format, formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
+import { Card, CardContent } from "@/components/ui/card";
 import 'ol/ol.css';
 
 interface Report {
@@ -18,6 +21,10 @@ interface Report {
   longitude: number;
   description: string;
   resolved: boolean;
+  address?: string;
+  createdAt: string;
+  resolvedAt?: string;
+  photos?: string[];
 }
 
 interface MapProps {
@@ -27,7 +34,8 @@ interface MapProps {
 const MapComponent = ({ reports }: MapProps) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<Map | null>(null);
-  const { toast } = useToast();
+  const [selectedReport, setSelectedReport] = useState<Report | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -39,11 +47,7 @@ const MapComponent = ({ reports }: MapProps) => {
     reports.forEach(report => {
       const marker = new Feature({
         geometry: new Point(fromLonLat([report.longitude, report.latitude])),
-        properties: {
-          id: report.id,
-          description: report.description,
-          resolved: report.resolved
-        }
+        properties: report
       });
 
       // Definir estilo do marcador baseado no status
@@ -88,11 +92,8 @@ const MapComponent = ({ reports }: MapProps) => {
       if (feature) {
         const properties = feature.get('properties');
         if (properties) {
-          const status = properties.resolved ? 'Resolvida' : 'Pendente';
-          toast({
-            title: `Denúncia: ${status}`,
-            description: properties.description,
-          });
+          setSelectedReport(properties);
+          setIsModalOpen(true);
         }
       }
     });
@@ -105,14 +106,65 @@ const MapComponent = ({ reports }: MapProps) => {
         mapInstanceRef.current = null;
       }
     };
-  }, [reports, toast]);
+  }, [reports]);
+
+  const getTimeStatus = (report: Report) => {
+    const createdDate = new Date(report.createdAt);
+    
+    if (report.resolved && report.resolvedAt) {
+      const resolvedDate = new Date(report.resolvedAt);
+      return `Resolvida há ${formatDistanceToNow(resolvedDate, { locale: ptBR })}`;
+    }
+    
+    return `Aberta há ${formatDistanceToNow(createdDate, { locale: ptBR })}`;
+  };
 
   return (
-    <div 
-      ref={mapRef} 
-      style={{ width: '100%', height: '400px' }}
-      className="rounded-lg mb-8 shadow-lg"
-    />
+    <>
+      <div 
+        ref={mapRef} 
+        style={{ width: '100%', height: '400px' }}
+        className="rounded-lg mb-8 shadow-lg"
+      />
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        {selectedReport && (
+          <DialogContent className="max-w-3xl">
+            <DialogHeader>
+              <DialogTitle>
+                Denúncia {selectedReport.resolved ? '(Resolvida)' : '(Pendente)'}
+              </DialogTitle>
+            </DialogHeader>
+            
+            <div className="grid gap-4">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="space-y-2">
+                    <p><strong>Descrição:</strong> {selectedReport.description}</p>
+                    <p><strong>Endereço:</strong> {selectedReport.address || 'Não informado'}</p>
+                    <p><strong>Data de criação:</strong> {format(new Date(selectedReport.createdAt), "dd 'de' MMMM 'de' yyyy 'às' HH:mm", { locale: ptBR })}</p>
+                    <p><strong>Status:</strong> {getTimeStatus(selectedReport)}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {selectedReport.photos && selectedReport.photos.length > 0 && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {selectedReport.photos.map((photo, index) => (
+                    <img
+                      key={index}
+                      src={photo}
+                      alt={`Foto ${index + 1} da denúncia`}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
+    </>
   );
 };
 
