@@ -49,6 +49,56 @@ const Index = () => {
         "/lovable-uploads/6aed2639-6158-49f3-ba93-184af0acb156.png"
       ]
     },
+    {
+      id: 4,
+      latitude: -7.2331,
+      longitude: -39.3350,
+      description: "Buraco na via pública",
+      resolved: false,
+      address: "Rua das Flores, 321",
+      createdAt: "2024-03-13T14:20:00Z",
+      photos: [
+        "/lovable-uploads/bc27f7c6-7c7e-4aaf-90f1-43cd19adf92a.png"
+      ]
+    },
+    {
+      id: 5,
+      latitude: -7.1931,
+      longitude: -39.3450,
+      description: "Poste com iluminação defeituosa",
+      resolved: true,
+      address: "Av. Leão Sampaio, 987",
+      createdAt: "2024-03-08T16:15:00Z",
+      resolvedAt: "2024-03-11T10:30:00Z",
+      photos: [
+        "/lovable-uploads/3f8f8250-5410-4296-968b-8aaf6af286c4.png"
+      ]
+    },
+    {
+      id: 6,
+      latitude: -7.2431,
+      longitude: -39.2950,
+      description: "Calçada danificada",
+      resolved: true,
+      address: "Rua São José, 654",
+      createdAt: "2024-03-09T09:40:00Z",
+      resolvedAt: "2024-03-14T15:20:00Z",
+      photos: [
+        "/lovable-uploads/2589f548-80a1-4fef-b312-c816b09315d8.png"
+      ]
+    },
+    {
+      id: 7,
+      latitude: -7.2181,
+      longitude: -39.3200,
+      description: "Faixa de pedestres apagada",
+      resolved: false,
+      address: "Av. do Comércio, 147",
+      createdAt: "2024-03-16T11:25:00Z",
+      photos: [
+        "/lovable-uploads/6aed2639-6158-49f3-ba93-184af0acb156.png"
+      ]
+    }
   ];
 
   const filterReports = () => {
