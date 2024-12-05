@@ -18,7 +18,7 @@ const Index = () => {
       description: "Lixo e entulho acumulado na calçada",
       resolved: false,
       address: "Rua São Pedro, 123",
-      createdAt: "2024-03-15T10:00:00Z",
+      createdAt: "2024-03-18T10:00:00Z", // Esta semana
       photos: [
         "/lovable-uploads/bc27f7c6-7c7e-4aaf-90f1-43cd19adf92a.png",
         "/lovable-uploads/3f8f8250-5410-4296-968b-8aaf6af286c4.png"
@@ -31,8 +31,8 @@ const Index = () => {
       description: "Árvore caída bloqueando a via",
       resolved: true,
       address: "Av. Padre Cícero, 456",
-      createdAt: "2024-03-10T15:30:00Z",
-      resolvedAt: "2024-03-12T09:00:00Z",
+      createdAt: "2024-02-15T15:30:00Z", // Mês passado
+      resolvedAt: "2024-02-17T09:00:00Z",
       photos: [
         "/lovable-uploads/2589f548-80a1-4fef-b312-c816b09315d8.png"
       ]
@@ -44,7 +44,7 @@ const Index = () => {
       description: "Vazamento de água na via pública",
       resolved: false,
       address: "Rua do Cruzeiro, 789",
-      createdAt: "2024-03-14T08:45:00Z",
+      createdAt: "2024-03-19T08:45:00Z", // Esta semana
       photos: [
         "/lovable-uploads/6aed2639-6158-49f3-ba93-184af0acb156.png"
       ]
@@ -56,7 +56,7 @@ const Index = () => {
       description: "Buraco na via pública",
       resolved: false,
       address: "Rua das Flores, 321",
-      createdAt: "2024-03-13T14:20:00Z",
+      createdAt: "2024-01-20T14:20:00Z", // Janeiro
       photos: [
         "/lovable-uploads/bc27f7c6-7c7e-4aaf-90f1-43cd19adf92a.png"
       ]
@@ -68,8 +68,8 @@ const Index = () => {
       description: "Poste com iluminação defeituosa",
       resolved: true,
       address: "Av. Leão Sampaio, 987",
-      createdAt: "2024-03-08T16:15:00Z",
-      resolvedAt: "2024-03-11T10:30:00Z",
+      createdAt: "2024-02-28T16:15:00Z", // Final de fevereiro
+      resolvedAt: "2024-03-02T10:30:00Z",
       photos: [
         "/lovable-uploads/3f8f8250-5410-4296-968b-8aaf6af286c4.png"
       ]
@@ -81,8 +81,8 @@ const Index = () => {
       description: "Calçada danificada",
       resolved: true,
       address: "Rua São José, 654",
-      createdAt: "2024-03-09T09:40:00Z",
-      resolvedAt: "2024-03-14T15:20:00Z",
+      createdAt: "2024-03-01T09:40:00Z", // Início de março
+      resolvedAt: "2024-03-05T15:20:00Z",
       photos: [
         "/lovable-uploads/2589f548-80a1-4fef-b312-c816b09315d8.png"
       ]
@@ -94,7 +94,7 @@ const Index = () => {
       description: "Faixa de pedestres apagada",
       resolved: false,
       address: "Av. do Comércio, 147",
-      createdAt: "2024-03-16T11:25:00Z",
+      createdAt: "2024-03-20T11:25:00Z", // Esta semana
       photos: [
         "/lovable-uploads/6aed2639-6158-49f3-ba93-184af0acb156.png"
       ]
