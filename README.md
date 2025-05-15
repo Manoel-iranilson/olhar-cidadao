@@ -1,69 +1,49 @@
-# Welcome to your Lovable project
+🌆 Cidade Interativa
+Cidade Interativa é um aplicativo universitário desenvolvido para monitoramento e denúncia de problemas urbanos, conectando cidadãos e o poder público na missão de construir uma cidade melhor.
 
-## Project info
+📱 Sobre o Projeto
+O aplicativo permite que os usuários:
 
-**URL**: https://lovable.dev/projects/957af0db-db27-40b1-bb17-0418a18dae45
+Registrem ocorrências urbanas (como buracos, iluminação, lixo, etc.).
 
-## How can I edit this code?
+Acompanhem o status das denúncias.
 
-There are several ways of editing your application.
+Visualizem no mapa os locais afetados.
 
-**Use Lovable**
+Se comuniquem diretamente com os órgãos responsáveis.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/957af0db-db27-40b1-bb17-0418a18dae45) and start prompting.
+O objetivo é promover transparência, participação cidadã e resolução ágil de problemas urbanos.
 
-Changes made via Lovable will be committed automatically to this repo.
+🚀 Tecnologias Utilizadas
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-**Use your preferred IDE**
+Vite – Empacotador rápido de aplicações front-end.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+React – Biblioteca JavaScript para construção de interfaces de usuário.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+TypeScript – Superset do JavaScript que adiciona tipagem estática.
 
-Follow these steps:
+Tailwind CSS – Framework de utilitários CSS para estilização rápida e responsiva.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+shadcn/ui – Conjunto moderno de componentes UI integrados com Tailwind CSS.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+🛠️ Como executar o projeto localmente
+Pré-requisitos
+Node.js e npm instalados na máquina.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Passo a passo
+bash
+Copiar
+Editar
+# 1. Clone o repositório
+git clone <URL_DO_SEU_REPOSITÓRIO>
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2. Acesse a pasta do projeto
+cd <NOME_DA_PASTA>
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/957af0db-db27-40b1-bb17-0418a18dae45) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+A aplicação estará disponível em: http://localhost:5173 (ou conforme indicado no terminal).
